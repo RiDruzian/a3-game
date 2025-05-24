@@ -1,0 +1,89 @@
+[gd_scene load_steps=11 format=3 uid="uid://b2jg3mljyx3lp"]
+
+[ext_resource type="Texture2D" uid="uid://dsc7g2d4bslb7" path="res://character/mamaco.png" id="1_b86qd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0aodi"]
+atlas = ExtResource("1_b86qd")
+region = Rect2(56, 0, 14, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b86qd"]
+atlas = ExtResource("1_b86qd")
+region = Rect2(28, 0, 14, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7jhj"]
+atlas = ExtResource("1_b86qd")
+region = Rect2(42, 0, 14, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grs83"]
+atlas = ExtResource("1_b86qd")
+region = Rect2(14, 0, 14, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs386"]
+atlas = ExtResource("1_b86qd")
+region = Rect2(0, 19, 14, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4g1q"]
+atlas = ExtResource("1_b86qd")
+region = Rect2(14, 19, 14, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay373"]
+atlas = ExtResource("1_b86qd")
+region = Rect2(42, 19, 14, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fs386"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0aodi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b86qd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7jhj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grs83")
+}],
+"loop": true,
+"name": &"running_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs386")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4g1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ay373")
+}],
+"loop": true,
+"name": &"running_right",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_grs83"]
+height = 26.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-254, 185)
+scale = Vector2(1.375, 1.5)
+sprite_frames = SubResource("SpriteFrames_fs386")
+animation = &"running_right"
+autoplay = "default"
+frame_progress = 0.973906
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-254, 185)
+shape = SubResource("CapsuleShape2D_grs83")
+debug_color = Color(0, 0.595928, 0.722865, 0.42)
