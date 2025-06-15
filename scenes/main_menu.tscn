@@ -1,23 +1,24 @@
-[gd_scene load_steps=16 format=3 uid="uid://bir3ut3yrcpno"]
+[gd_scene load_steps=17 format=3 uid="uid://bir3ut3yrcpno"]
 
-[ext_resource type="Texture2D" uid="uid://c1eenistvabgs" path="res://backgrounds/BG_1/Jungle/1.Backround.png" id="1_8ln24"]
-[ext_resource type="Script" uid="uid://dnu1qgeejnns7" path="res://scenes/main_menu.gd" id="1_rtw2f"]
-[ext_resource type="Texture2D" uid="uid://dr0ki5rvgypxn" path="res://backgrounds/BG_1/Jungle/2.Trees_back.png" id="2_rtw2f"]
-[ext_resource type="Texture2D" uid="uid://c21o2a8ry61vg" path="res://backgrounds/BG_1/Jungle/3.Trees_front.png" id="3_oa1go"]
-[ext_resource type="Texture2D" uid="uid://b7m4e6yefb8i6" path="res://backgrounds/BG_1/Jungle/4.Ground.png" id="4_tbmy8"]
-[ext_resource type="FontFile" uid="uid://c163oi7iu2tsu" path="res://fontes/04B_30__.TTF" id="5_jk1qb"]
+[ext_resource type="Script" uid="uid://dnu1qgeejnns7" path="res://scenes/main_menu.gd" id="1_oa1go"]
+[ext_resource type="Texture2D" uid="uid://c1eenistvabgs" path="res://backgrounds/BG_1/Jungle/1.Backround.png" id="2_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://dr0ki5rvgypxn" path="res://backgrounds/BG_1/Jungle/2.Trees_back.png" id="3_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://c21o2a8ry61vg" path="res://backgrounds/BG_1/Jungle/3.Trees_front.png" id="4_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://b7m4e6yefb8i6" path="res://backgrounds/BG_1/Jungle/4.Ground.png" id="5_lgwnu"]
+[ext_resource type="FontFile" uid="uid://fvpari1v1q22" path="res://fontes/04B_30__.TTF" id="6_flqon"]
+[ext_resource type="AudioStream" uid="uid://bbks4v6ymqd1w" path="res://sons/33 Stray Cat (Alternate).mp3" id="7_rcqid"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5dd4i"]
-texture = ExtResource("1_8ln24")
+texture = ExtResource("2_tbmy8")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lgwnu"]
-texture = ExtResource("2_rtw2f")
+texture = ExtResource("3_jk1qb")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_flqon"]
-texture = ExtResource("3_oa1go")
+texture = ExtResource("4_5dd4i")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcqid"]
-texture = ExtResource("4_tbmy8")
+texture = ExtResource("5_lgwnu")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ln24"]
 
@@ -54,7 +55,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_rtw2f")
+script = ExtResource("1_oa1go")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -113,7 +114,7 @@ size_flags_vertical = 3
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_jk1qb")
+theme_override_fonts/font = ExtResource("6_flqon")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8ln24")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
@@ -125,7 +126,7 @@ text = "Iniciar Jogo"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_jk1qb")
+theme_override_fonts/font = ExtResource("6_flqon")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rtw2f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
@@ -152,12 +153,17 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 10
 theme_override_constants/shadow_outline_size = 10
-theme_override_fonts/font = ExtResource("5_jk1qb")
+theme_override_fonts/font = ExtResource("6_flqon")
 theme_override_font_sizes/font_size = 65
-text = " Macaco Pelado 
+text = "Maqueco
 Adventures"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_rcqid")
+volume_db = -18.055
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/botão_iniciar" to="." method="_on_botão_iniciar_pressed"]
 [connection signal="pressed" from="VBoxContainer/botao_sair" to="." method="_on_botao_sair_pressed"]
